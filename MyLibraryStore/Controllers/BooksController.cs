@@ -64,6 +64,11 @@ namespace MyLibraryStore.Controllers
             return View(book);
         }
 
+        public IActionResult NewAction()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Update(int? id, Book book)
         {
