@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Book>
+@*@{
+        ViewData["Title"] = "Index";
+    }*@
+
+<h1 style="text-align:center;color:chocolate">List Of Books</h1>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6" style="text-align:center">
+        @if (Model.Count() == 0)
+        {
+            <h2>No Books</h2>
+        }
+        else
+        {
+            @foreach (var book in Model)
+            {
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a asp-controller="Books" asp-action="Details" asp-route-Id="@book.Id">@book.BookName</a>
+                    </li>
+                    <li class="list-group-item">
+                        <form asp-controller="Books" asp-action="Delete" method="post" asp-route-Id="@book.Id">
+                            <button type="submit" class="btn btn-primary">Delete</button>
+                        </form>
+                    </li>
+                    <li class="list-group-item">
+                        <form asp-controller="Books" asp-action="Update" method="get" asp-route-Id="@book.Id">
+                            <button type="submit" class="btn btn-primary">Edit Book Details</button>
+                        </form>
+                    </li>
+                </ul>
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@model Book
+@*@{
+        ViewData["Title"] = "Details";
+    }*@
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-5">
+        <h1 style="text-align:center;color:chocolate">Details of Book</h1>
+        @if (Model != null)
+        {
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>Book Name</th>
+                    <td>@Model.BookName</td>
+                </tr>
+                <tr>
+                    <th>Author Name</th>
+                    <td>@Model.Author</td>
+                </tr>
+                <tr>
+                    <th>ISBN</th>
+                    <td>@Model.ISBN</td>
+                </tr>
+                <tr>
+                    <th>Published Date</th>
+                    <td>@Model.PublishedDate.ToShortDateString()</td>
+                </tr>
+            </table>
+        }
+        else
+        {
+            <h2>No Books Available</h2>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-5">
+        <a asp-controller="Books" asp-action="Index">Back to Index</a>
+    </div>
+</div>

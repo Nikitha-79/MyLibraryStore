@@ -1,0 +1,46 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update the book details</h1>
+
+<div class="row">
+    <div class="col-md-5">
+        <form asp-controller="Books" asp-action="Update" method="post">
+            <div class="form-group">
+                <label asp-for="BookName"></label>
+                <input asp-for="@Model.BookName" class="form-control" />
+                <span asp-validation-for="@Model.BookName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Author"></label>
+                <input asp-for="@Model.Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISBN"></label>
+                <input asp-for="ISBN" class="form-control" />
+                <span asp-validation-for="ISBN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublishedDate"></label>
+                <input asp-for="PublishedDate" class="form-control" />
+                <span asp-validation-for="PublishedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre">
+                    <select asp-for="Genre" class="form-control">
+                        <option disabled selected>Select</option>
+                        <option value="Lifestory">LifeStory</option>
+                        <option value="Thriiller">Thriller</option>
+                        <option value="Horror">Horror</option>
+                    </select>
+                </label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Edit Book</button>
+            </div>
+        </form>
+    </div>
+</div>
