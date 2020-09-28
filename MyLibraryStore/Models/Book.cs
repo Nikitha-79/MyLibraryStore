@@ -21,11 +21,7 @@ namespace MyLibraryStore.Models
         [Required(ErrorMessage ="ISBN number is required")]
         public string ISBN { get; set; }
 
-        public Genre Genre { get; set; }
-
-        //[Display(Name = "Genre")]
-        //[Required]
-        //public int GenreId { get; set; }
+        public string Genre { get; set; }
 
         [Display(Name ="Published Date")]
         [DataType(DataType.Date)]

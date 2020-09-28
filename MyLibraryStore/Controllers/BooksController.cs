@@ -79,5 +79,15 @@ namespace MyLibraryStore.Controllers
             _bookRepos.UpdateBook(id, book);
             return RedirectToAction("Index", "Books");
         }
+        public List<SelectListItem> Genre()
+        {
+            return new List<SelectListItem>
+            {
+                new SelectListItem { Text = "Horror", Value = "Horror"},
+                new SelectListItem { Text = "Action", Value = "Action"},
+                new SelectListItem { Text = "Comic", Value = "Comic"},
+                new SelectListItem { Text = "Detective", Value = "Detective"},
+            };
+        }
      }
 }
